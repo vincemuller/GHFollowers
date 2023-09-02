@@ -16,6 +16,9 @@
 		BC52B47E2A993DF700A0F663 /* GFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC52B47D2A993DF700A0F663 /* GFButton.swift */; };
 		BC52B4802A99431000A0F663 /* GFTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC52B47F2A99431000A0F663 /* GFTextField.swift */; };
 		BC5F07AF2AA288C3007096F8 /* FollowerListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F07AE2AA288C3007096F8 /* FollowerListVC.swift */; };
+		BC5F07B12AA3BBE6007096F8 /* GFTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F07B02AA3BBE6007096F8 /* GFTitleLabel.swift */; };
+		BC5F07B32AA3BE7B007096F8 /* GFBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F07B22AA3BE7B007096F8 /* GFBodyLabel.swift */; };
+		BC5F07B52AA3BF51007096F8 /* GFAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F07B42AA3BF51007096F8 /* GFAlertVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		BC52B47D2A993DF700A0F663 /* GFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFButton.swift; sourceTree = "<group>"; };
 		BC52B47F2A99431000A0F663 /* GFTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTextField.swift; sourceTree = "<group>"; };
 		BC5F07AE2AA288C3007096F8 /* FollowerListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerListVC.swift; sourceTree = "<group>"; };
+		BC5F07B02AA3BBE6007096F8 /* GFTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTitleLabel.swift; sourceTree = "<group>"; };
+		BC5F07B22AA3BE7B007096F8 /* GFBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFBodyLabel.swift; sourceTree = "<group>"; };
+		BC5F07B42AA3BF51007096F8 /* GFAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAlertVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,9 @@
 				BC52B47D2A993DF700A0F663 /* GFButton.swift */,
 				BC52B47F2A99431000A0F663 /* GFTextField.swift */,
 				BC5F07AE2AA288C3007096F8 /* FollowerListVC.swift */,
+				BC5F07B02AA3BBE6007096F8 /* GFTitleLabel.swift */,
+				BC5F07B22AA3BE7B007096F8 /* GFBodyLabel.swift */,
+				BC5F07B42AA3BF51007096F8 /* GFAlertVC.swift */,
 			);
 			path = GHFollowers;
 			sourceTree = "<group>";
@@ -150,6 +159,9 @@
 				BC52B47C2A96820200A0F663 /* FavoritesListVC.swift in Sources */,
 				BC52B47E2A993DF700A0F663 /* GFButton.swift in Sources */,
 				BC52B47A2A9681C900A0F663 /* SearchVC.swift in Sources */,
+				BC5F07B52AA3BF51007096F8 /* GFAlertVC.swift in Sources */,
+				BC5F07B32AA3BE7B007096F8 /* GFBodyLabel.swift in Sources */,
+				BC5F07B12AA3BBE6007096F8 /* GFTitleLabel.swift in Sources */,
 				BC5F07AF2AA288C3007096F8 /* FollowerListVC.swift in Sources */,
 				BC52B4642A96775400A0F663 /* AppDelegate.swift in Sources */,
 				BC52B4662A96775400A0F663 /* SceneDelegate.swift in Sources */,
