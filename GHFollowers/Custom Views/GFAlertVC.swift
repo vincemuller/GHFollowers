@@ -25,7 +25,6 @@ class GFAlertVC: UIViewController {
         self.alertTitle     = title
         self.message        = message
         self.buttonTitle    = button
-        
     }
     
     required init?(coder: NSCoder) {
