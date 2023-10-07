@@ -1,50 +1,51 @@
-//
-//  NetworkManager.swift
-//  GHFollowers
-//
-//  Created by Vince Muller on 9/4/23.
-//
 
-import Foundation
+import UIKit
 
 class NetworkManager {
-    static let shared   = NetworkManager()
-    let baseURL         = "https://api.github.com/users/"
+    static let shared   = NetworkManager()  //Every NetworkManager call will have this variable
+    private let baseURL         = "https://api.github.com/users/"      //The static url for the api http(s) request
+    let cache           = NSCache<NSString, UIImage>()
     
-    private init() {}
+    private init() {}  //This combined with the static variable creates the singleton
     
-    func getFollowers(for username: String, page: Int, completed: @escaping ([Follower]?, String?) -> Void) {
+    //Function to execute the sending of a network request
+    //username is a parameter variable, page is the parameter for pagination, completed is a completion handler....@escping is used because this function needs to wait for a api response.  [Follower] is the expected array of followers that will be in the response or an ErrorMessage...both are optionals.
+    func getFollowers(for username: String, page: Int, completed: @escaping (Result<[Follower], GFError>) -> Void) {
         let endpoint = baseURL + "\(username)/followers?per_page=100&page=\(page)"
         
+        //basically an if statement to account for the optional failure due to invalid username
         guard let url = URL(string: endpoint) else {
-            completed(nil, "This username created an invalid request, please try again.")
+            completed(.failure(.invalidUsername))
             return
         }
         
+        //If the username is valid, then the url can be used and a response will be returned
+        //The error has several error options...guard statements help to manage this and communicate the errors to the user/developer
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             
             if let _ = error {
-                completed(nil, "Unable to complete your request. Please check your internet connection.")
+                completed(.failure(.unableToComplete))
                 return
             }
                           
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                completed(nil, "Invalid response from the server. Please try again.")
+                completed(.failure(.invalidResponse))
                 return
             }
             
             guard let data = data else {
-                completed(nil, "The data received from the server was invalid. Please try again.")
+                completed(.failure(.invalidData))
                 return
             }
             
+            //If the network connection is good, the response is 200 or ok, and the data is valid, then the JSON can be decoded.
             do {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 let followers = try decoder.decode([Follower].self, from: data)
-                completed(followers, nil)
+                completed(.success(followers))
             } catch {
-                completed(nil, "The data received from the server was invalid. Please try again.")
+                completed(.failure(.invalidData))
             }
             
         }
